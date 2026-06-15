@@ -1,0 +1,20 @@
+/* index.css — Simple Reset to ensure full screen layouts work correctly */
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: #0a0a0c;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}

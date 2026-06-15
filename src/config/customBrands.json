@@ -1,0 +1,2069 @@
+{
+  "komplyte": {
+    "id": "komplyte",
+    "name": "Komplyte",
+    "category": "wellness",
+    "language": "hinglish",
+    "tone": "friendly",
+    "phoneNumberId": "komplyte",
+    "returnPolicy": "- Returns accepted within 7 days.\n- Must be unused.",
+    "couriers": [
+      "Delhivery",
+      "BlueDart"
+    ],
+    "products": [],
+    "shipping": {
+      "freeAbove": 599,
+      "standardCharge": 79,
+      "estimatedDays": "3-5 days",
+      "codAvailable": true,
+      "codCharge": 49
+    },
+    "faqs": [],
+    "greeting": "Hii! 💕 Welcome to Komplyte D2C Support. Main Priya baat kar rahi hoon. Kaise help kar sakti hoon aapki? 😊\n\n1️⃣ Order status check karein 📦\n2️⃣ Returns and Refunds policy 🔄\n3️⃣ Product features and details 👗\n4️⃣ Human support agent se baat karein 👩‍💼",
+    "escalationTriggers": [
+      "angry",
+      "human"
+    ],
+    "escalationMessage": "Aapki request log kar di gayi hai. Komplyte support agent aapse 2 minutes mein connect karega. 🙏",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "modelName": "Google: Gemma 4 26B A4B  (free)",
+    "orders": "20",
+    "notes": "Wants to test Hinglish bot",
+    "status": "hot"
+  },
+  "demo": {
+    "id": "demo",
+    "name": "Riya's Boutique",
+    "category": "fashion",
+    "language": "hinglish",
+    "tone": "friendly",
+    "phoneNumberId": "demo",
+    "returnPolicy": "- Returns accepted within 7 days.\n- Must be unused.",
+    "couriers": [
+      "Delhivery",
+      "BlueDart"
+    ],
+    "products": [
+      {
+        "id": "d3b323ed-2738-48e9-b147-50e4075fa38f",
+        "name": "Varanasi Silk Saree",
+        "description": "Exquisite handwoven Banarasi pure silk saree featuring heritage floral bootis in real gold zari work.",
+        "price": 45000,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&auto=format&fit=crop&q=60",
+        "brand": "Sabyasachi",
+        "sku": "ET-VARANASISI",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "34376a62-f4ca-4baa-a5db-b30bbde77199",
+        "name": "Floral Organza Saree",
+        "description": "Delicate pastel organza saree featuring hand-painted botanical designs and fine gota patti borders.",
+        "price": 24900,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030470298-db0952d7e008?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "ET-FLORALORGA",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "11e4c0eb-ecbf-47dd-aec6-f0888ba6e787",
+        "name": "Royal Velvet Anarkali",
+        "description": "Regal deep emerald velvet Anarkali suit set decorated with hand-embroidered tilla work on neck and sleeves.",
+        "price": 18500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Couture",
+        "sku": "ET-ROYALVELVE",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "7fcda51e-3521-4bef-8ab2-a1dfcf7aa65c",
+        "name": "Ivory Chikankari Kurta",
+        "description": "Classic Lucknowi hand-embroidered georgette kurta set in a pristine ivory white tone with slip.",
+        "price": 4999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fabindia",
+        "sku": "ET-IVORYCHIKA",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "a5577478-daf4-4fa3-a1e1-b65fe3aba2d7",
+        "name": "Crimson Silk Lehenga Set",
+        "description": "Heirloom crimson red silk lehenga skirt featuring floral motifs, matching choli, and sheer organza dupatta.",
+        "price": 85000,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=60",
+        "brand": "Sabyasachi",
+        "sku": "ET-CRIMSONSIL",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "81f4789c-07b8-410c-97b7-9c52bd875022",
+        "name": "Peach Georgette Sharara Set",
+        "description": "Flowy layered pastel peach sharara pants paired with a short sequined kurta and matching dupatta.",
+        "price": 6999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1608748010899-18f300247112?w=500&auto=format&fit=crop&q=60",
+        "brand": "Biba",
+        "sku": "ET-PEACHGEORG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "2611f2d2-36a9-42f3-aafc-401898448bae",
+        "name": "Indigo Blockprint Kurti",
+        "description": "Daily-wear A-line hand block printed cotton kurti dyed in organic indigo shades.",
+        "price": 2499,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fabindia",
+        "sku": "ET-INDIGOBLOC",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "7e5341fa-c3bf-439e-889a-6002e98ccc18",
+        "name": "Hand-embroidered Kaftan",
+        "description": "Silk crepe luxury kaftan printed with traditional Rajasthani architecture motifs, hand-beaded neckline.",
+        "price": 14999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "ET-HAND-EMBRO",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "ef2d1cb6-1128-423e-879f-9d707d579e2a",
+        "name": "Banarasi Brocade Kurta",
+        "description": "Rich magenta silk brocade straight kurta paired with gold woven tissue palazzo pants.",
+        "price": 8999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1583391265517-35bbdad01209?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Couture",
+        "sku": "ET-BANARASIBR",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "1df69d4f-6413-49f5-b16a-4e9cea846d65",
+        "name": "Pastel Mint Gharara",
+        "description": "Elegant festive mint green gharara set printed with silver foil details and pink border accents.",
+        "price": 7500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030469668-93535c17b6b3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Biba",
+        "sku": "ET-PASTELMINT",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "51f8a675-7f71-4eec-afd7-b8694360d5be",
+        "name": "Satin Slip Dress",
+        "description": "Fluid cowl neck satin midi slip dress in luxury emerald green, featuring delicate spaghetti straps.",
+        "price": 3990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-SATINSLIPD",
+        "category": "Western Wear"
+      },
+      {
+        "id": "0faa2a8a-ea92-4f3b-bb98-e0e3d36edb8e",
+        "name": "Linen Wrap Sun Dress",
+        "description": "Breathable pure organic linen wrap dress featuring a tie belt waist and vintage flared skirt.",
+        "price": 2499,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1544441893-675973e31985?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-LINENWRAPS",
+        "category": "Western Wear"
+      },
+      {
+        "id": "ae41d96b-b511-4f2c-8c20-e449bc5c9d1b",
+        "name": "Tweed Double Blazer",
+        "description": "Textured tweed blazer jacket with structured padded shoulders and polished gold-crest buttons.",
+        "price": 6990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-TWEEDDOUBL",
+        "category": "Western Wear"
+      },
+      {
+        "id": "7bd8c87e-3f1c-4626-b8df-9194f306ca9d",
+        "name": "Silk Georgette Blouse",
+        "description": "Elegant semi-sheer high-neck silk blouse featuring ruffled neck detail and mother-of-pearl buttons.",
+        "price": 3590,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-SILKGEORGE",
+        "category": "Western Wear"
+      },
+      {
+        "id": "da35950d-2775-4376-93d4-98cbaed8056e",
+        "name": "Pleated Satin Skirt",
+        "description": "High-waist champagne gold accordion-pleated midi skirt with a comfortable elasticated waistband.",
+        "price": 2999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1582142306909-195724d33ab9?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-PLEATEDSAT",
+        "category": "Western Wear"
+      },
+      {
+        "id": "139dd7c3-2179-4285-b57a-08dca458c792",
+        "name": "Sateen Wide Leg Trousers",
+        "description": "Sleek flowing sateen wide-leg trousers in classic cream white, with front pockets and zip fly.",
+        "price": 3290,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-SATEENWIDE",
+        "category": "Western Wear"
+      },
+      {
+        "id": "03c94af2-cf8d-4d0c-a6a7-a3ee9e255cc6",
+        "name": "Lace Trim Cami Top",
+        "description": "Premium silk cami top detailed with delicate black eyelash lace trimming on the neckline.",
+        "price": 1990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-LACETRIMCA",
+        "category": "Western Wear"
+      },
+      {
+        "id": "add37646-8820-4ab7-ae79-cf4f152ec1b2",
+        "name": "Ribbed Knit Bodycon Dress",
+        "description": "Sophisticated long sleeve ribbed knit midi dress contouring the body, styled with a high collar.",
+        "price": 4590,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-RIBBEDKNIT",
+        "category": "Western Wear"
+      },
+      {
+        "id": "34e26909-5867-4d21-bb1f-7e7fbe25ba4a",
+        "name": "Floral Chiffon Wrap Dress",
+        "description": "Flowing floral printed chiffon midi wrap dress styled with sheer balloon sleeves and ruffle hem.",
+        "price": 3499,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-FLORALCHIF",
+        "category": "Western Wear"
+      },
+      {
+        "id": "ec5b330e-e990-498a-b2a6-e71a40c3b121",
+        "name": "Classic Trench Coat",
+        "description": "Double-breasted water-resistant beige trench coat with storm flaps and a detachable waist belt.",
+        "price": 8990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-CLASSICTRE",
+        "category": "Western Wear"
+      },
+      {
+        "id": "6be85dd1-ffed-4178-9952-d4d224f9f3fd",
+        "name": "Leather Satchel Bag",
+        "description": "Structured top-handle genuine leather satchel bag with luxury polished gold-tone locking hardware.",
+        "price": 12500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "HA-LEATHERSAT",
+        "category": "Handbags"
+      },
+      {
+        "id": "92ad96d2-4514-4a22-8f00-d58396562726",
+        "name": "Suede Crossbody Bag",
+        "description": "Minimalist premium soft suede sling crossbody bag detailed with an adjustable leather shoulder strap.",
+        "price": 8999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc15aae9?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "HA-SUEDECROSS",
+        "category": "Handbags"
+      },
+      {
+        "id": "cb088416-6889-48cb-84f1-39a6ba367c6e",
+        "name": "Silk Brocade Box Clutch",
+        "description": "Elegant traditional box clutch wrapped in heritage Banarasi silk brocade, finished with a metallic clasp.",
+        "price": 6500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "HA-SILKBROCAD",
+        "category": "Handbags"
+      },
+      {
+        "id": "c3d816e4-28a7-4949-b4c0-522ad05d1c56",
+        "name": "Quilted Chain Tote Bag",
+        "description": "Quilted luxury faux leather shoulder bag styled with interlocked gold chain-link straps and double pocket.",
+        "price": 4990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "HA-QUILTEDCHA",
+        "category": "Handbags"
+      },
+      {
+        "id": "56e7cb27-8f25-434c-9082-be04835e85ce",
+        "name": "Canvas Utility Tote",
+        "description": "Spacious woven structured canvas tote bag with contrast leather handles and magnetic button closure.",
+        "price": 3290,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "HA-CANVASUTIL",
+        "category": "Handbags"
+      },
+      {
+        "id": "da985687-acd1-4350-b2c6-67dcd057d26e",
+        "name": "Luxury Envelope Clutch",
+        "description": "Sleek envelope foldover clutch in pebble-grained calfskin leather, features card slots and chain strap.",
+        "price": 7900,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1598532187856-3c09e3905cfc?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "HA-LUXURYENVE",
+        "category": "Handbags"
+      },
+      {
+        "id": "585fcef9-1b7c-490f-8d33-01245a85a6d5",
+        "name": "Saddle Crossbody Bag",
+        "description": "Heritage saddle bag in rich cognac leather, featuring brass buckles and front slip pockets.",
+        "price": 10500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "HA-SADDLECROS",
+        "category": "Handbags"
+      },
+      {
+        "id": "9a2f37d5-b960-461f-9c53-24db3c02e8f0",
+        "name": "Woven Straw Beach Bag",
+        "description": "Bohemian summer straw shoulder bag woven with geometric panels, perfect for summer outings.",
+        "price": 1999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1576053139778-7e32f2ae3cf4?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "HA-WOVENSTRAW",
+        "category": "Handbags"
+      },
+      {
+        "id": "8693c507-e11d-4881-9a1c-2f788b4de22b",
+        "name": "Designer Bucket Bag",
+        "description": "Mini drawstring leather bucket bag with top carry handle and gold hardware eyelets.",
+        "price": 3990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611085583191-a3b1a8a89b70?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "HA-DESIGNERBU",
+        "category": "Handbags"
+      },
+      {
+        "id": "a0a3def4-8361-408c-b959-0fd8aaaae794",
+        "name": "Metallic Evening Pouch",
+        "description": "Glittering rose gold metallic woven mesh pouch with drawcord lock, perfect for weddings.",
+        "price": 2990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc15aae9?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "HA-METALLICEV",
+        "category": "Handbags"
+      },
+      {
+        "id": "256df9a8-2892-424b-b873-0143471e9ef1",
+        "name": "Zardozi Leather Juttis",
+        "description": "Handcrafted leather juttis detailed with traditional gold zardozi leaf embroidery and pearls.",
+        "price": 3200,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fizzy Goblet",
+        "sku": "FO-ZARDOZILEA",
+        "category": "Footwear"
+      },
+      {
+        "id": "0f96afc5-1424-479e-83a9-b278d888cffa",
+        "name": "Ankle Strap Leather Heels",
+        "description": "Classic pointed toe high-heeled pumps detailed with adjustable cross-ankle straps in nude patent leather.",
+        "price": 8999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+        "brand": "Steve Madden",
+        "sku": "FO-ANKLESTRAP",
+        "category": "Footwear"
+      },
+      {
+        "id": "3566775c-5833-4238-9b7a-59ac076cf132",
+        "name": "Satin Mule Flats",
+        "description": "Sophisticated pointed-toe flat slide mules featuring a crystal-embellished decorative front buckle.",
+        "price": 4590,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-SATINMULEF",
+        "category": "Footwear"
+      },
+      {
+        "id": "af30bc6c-971e-4979-95c0-c504daebd31a",
+        "name": "Strappy Suede Sandals",
+        "description": "Lace-up block-heeled sandals crafted in soft black suede leather with tassels.",
+        "price": 6999,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+        "brand": "Steve Madden",
+        "sku": "FO-STRAPPYSUE",
+        "category": "Footwear"
+      },
+      {
+        "id": "9ea3d791-d4bc-4d10-b344-119ced09882e",
+        "name": "Embellished Wedding Heels",
+        "description": "Elegant bridal kitten heels wrapped in champagne satin and hand-beaded with premium glass beads.",
+        "price": 11500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "FO-EMBELLISHE",
+        "category": "Footwear"
+      },
+      {
+        "id": "08a67c52-0659-4edd-bfbf-c8e20733eba4",
+        "name": "Braided Leather Slides",
+        "description": "Comfortable chic slides with a padded footbed and woven strap detail in tan leather.",
+        "price": 3290,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-BRAIDEDLEA",
+        "category": "Footwear"
+      },
+      {
+        "id": "e1cb1138-1c66-4fd2-bf8e-62932c092a28",
+        "name": "Gilded Kohlapuri Wedges",
+        "description": "Traditional Kohlapuri sandal styled with a modern comfortable cork wedge heel and gold straps.",
+        "price": 3800,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fizzy Goblet",
+        "sku": "FO-GILDEDKOHL",
+        "category": "Footwear"
+      },
+      {
+        "id": "e4b94d50-7bc2-4b31-aea0-6467d7aa4e6d",
+        "name": "Velvet Embroidered Loafers",
+        "description": "Chic smoking slippers in black velvet, embroidered with customized gold monogram details.",
+        "price": 5490,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-VELVETEMBR",
+        "category": "Footwear"
+      },
+      {
+        "id": "b62168f7-bdd6-499f-81df-211bf2a64e14",
+        "name": "Metallic Strappy Flats",
+        "description": "Minimalist slip-on flat sandals featuring slim intersecting gold straps and square toe.",
+        "price": 1499,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "FO-METALLICST",
+        "category": "Footwear"
+      },
+      {
+        "id": "d3cf2326-a432-4510-82e6-00f253015688",
+        "name": "Leather Chelsea Boots",
+        "description": "Classic black leather Chelsea boots featuring elasticated panels and low block heel.",
+        "price": 7990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "FO-LEATHERCHE",
+        "category": "Footwear"
+      },
+      {
+        "id": "52c8475d-cd89-4f0a-80a5-716417b50ca0",
+        "name": "Polki Kundan Necklace Set",
+        "description": "Stunning heritage Choker necklace set in gold-plating, inlaid with uncut glass Polki and hanging green emerald beads.",
+        "price": 35000,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-POLKIKUNDA",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "a72a5d9d-3c16-4c8b-886c-20b5de0c18aa",
+        "name": "Pave Crystal Hoop Earrings",
+        "description": "Sparkling pave-set crystal hoop earrings cast in a modern high-polish rose gold plating.",
+        "price": 6990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Swarovski",
+        "sku": "JE-PAVECRYSTA",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "816f40bc-ee71-4367-a9d4-3cdd9dc3adf5",
+        "name": "Oversized Acetate Sunglasses",
+        "description": "Statement designer square-frame black sunglasses with premium scratch-resistant UV400 lenses.",
+        "price": 18500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60",
+        "brand": "Prada",
+        "sku": "JE-OVERSIZEDA",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "d44b06b0-fbc4-41f4-9413-3e9f3a3c8e0c",
+        "name": "Pearl Drop Earrings",
+        "description": "Classic freshwater baroque pearl drops suspended from elegant sterling silver gold-plated studs.",
+        "price": 4500,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-PEARLDROPE",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "c17046df-30c6-4b41-8c07-25d9cadd5b7f",
+        "name": "Silk Hair Scarf Set",
+        "description": "Three pack of organic mulberry silk square neck scarves printed in vintage chic patterns.",
+        "price": 1590,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "JE-SILKHAIRSC",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "321779ce-5946-4116-927a-41a19c73914d",
+        "name": "Filigree Cuff Bangle",
+        "description": "Handcrafted adjustable brass cuff bangle detailed with traditional Indian filigree design.",
+        "price": 8900,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "JE-FILIGREECU",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "12039b74-1a73-4d40-ab49-20e8e3c8f74d",
+        "name": "Classic Rose Gold Watch",
+        "description": "Chic women's timepiece featuring a minimal rose gold dial case and premium mesh strap.",
+        "price": 12499,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "JE-CLASSICROS",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "14b180b8-82bb-40f6-a18d-5fd2144ac378",
+        "name": "Emerald Ring 18k Gold",
+        "description": "Dainty 18k solid yellow gold ring set with a faceted natural oval-cut green emerald gemstone.",
+        "price": 28900,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-EMERALDRIN",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "169ada29-4da9-4d54-85ba-1b040ee7600e",
+        "name": "Wool Felt Fedora Hat",
+        "description": "Classic autumn fedora hat styled with a structured wide brim and contrast grosgrain band.",
+        "price": 2990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1533827432537-70133748f5c8?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "JE-WOOLFELTFE",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "6e1abc2f-e364-4fbe-a18a-ce8e3e0864ec",
+        "name": "Delicate Coin Anklet",
+        "description": "Minimalist rose gold double chain anklet detailed with tiny polished geometric metal coin drops.",
+        "price": 3990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Swarovski",
+        "sku": "JE-DELICATECO",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "011e56ee-0755-4e68-ae31-4b482ae99553",
+        "name": "Varanasi Silk Saree (Rose Gold Edition)",
+        "description": "Exquisite handwoven Banarasi pure silk saree featuring heritage floral bootis in real gold zari work. Finished in our signature luxury rose-gold details.",
+        "price": 47250,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&auto=format&fit=crop&q=60",
+        "brand": "Sabyasachi",
+        "sku": "ET-VARANASISI-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "c94d8092-76c1-4c1e-84b3-1678ecc4f8b7",
+        "name": "Floral Organza Saree (Rose Gold Edition)",
+        "description": "Delicate pastel organza saree featuring hand-painted botanical designs and fine gota patti borders. Finished in our signature luxury rose-gold details.",
+        "price": 26145,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030470298-db0952d7e008?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "ET-FLORALORGA-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "c40f0d85-cf04-40e7-858e-69e6492cdd9f",
+        "name": "Royal Velvet Anarkali (Rose Gold Edition)",
+        "description": "Regal deep emerald velvet Anarkali suit set decorated with hand-embroidered tilla work on neck and sleeves. Finished in our signature luxury rose-gold details.",
+        "price": 19425,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Couture",
+        "sku": "ET-ROYALVELVE-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "60fa3001-2242-4bba-a4d8-ceeabc79fd86",
+        "name": "Ivory Chikankari Kurta (Rose Gold Edition)",
+        "description": "Classic Lucknowi hand-embroidered georgette kurta set in a pristine ivory white tone with slip. Finished in our signature luxury rose-gold details.",
+        "price": 5249,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fabindia",
+        "sku": "ET-IVORYCHIKA-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "7fc876ac-af73-4d3b-a4f2-c3da493da764",
+        "name": "Crimson Silk Lehenga Set (Rose Gold Edition)",
+        "description": "Heirloom crimson red silk lehenga skirt featuring floral motifs, matching choli, and sheer organza dupatta. Finished in our signature luxury rose-gold details.",
+        "price": 89250,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=60",
+        "brand": "Sabyasachi",
+        "sku": "ET-CRIMSONSIL-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "34d1c314-4b73-4d67-a451-b81b335693d2",
+        "name": "Peach Georgette Sharara Set (Rose Gold Edition)",
+        "description": "Flowy layered pastel peach sharara pants paired with a short sequined kurta and matching dupatta. Finished in our signature luxury rose-gold details.",
+        "price": 7349,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1608748010899-18f300247112?w=500&auto=format&fit=crop&q=60",
+        "brand": "Biba",
+        "sku": "ET-PEACHGEORG-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "d3bb0f9a-dd3b-48f8-b656-8e47cf5dc79a",
+        "name": "Indigo Blockprint Kurti (Rose Gold Edition)",
+        "description": "Daily-wear A-line hand block printed cotton kurti dyed in organic indigo shades. Finished in our signature luxury rose-gold details.",
+        "price": 2624,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fabindia",
+        "sku": "ET-INDIGOBLOC-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "fb7b7565-aafd-49a9-bbc3-91cf4f8e2f3b",
+        "name": "Hand-embroidered Kaftan (Rose Gold Edition)",
+        "description": "Silk crepe luxury kaftan printed with traditional Rajasthani architecture motifs, hand-beaded neckline. Finished in our signature luxury rose-gold details.",
+        "price": 15749,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "ET-HAND-EMBRO-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "09fb786e-dd79-41fa-aacc-a15576f0b51f",
+        "name": "Banarasi Brocade Kurta (Rose Gold Edition)",
+        "description": "Rich magenta silk brocade straight kurta paired with gold woven tissue palazzo pants. Finished in our signature luxury rose-gold details.",
+        "price": 9449,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1583391265517-35bbdad01209?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Couture",
+        "sku": "ET-BANARASIBR-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "70867b3b-315a-4e5e-8039-201ca8ee8916",
+        "name": "Pastel Mint Gharara (Rose Gold Edition)",
+        "description": "Elegant festive mint green gharara set printed with silver foil details and pink border accents. Finished in our signature luxury rose-gold details.",
+        "price": 7875,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1610030469668-93535c17b6b3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Biba",
+        "sku": "ET-PASTELMINT-RG",
+        "category": "Ethnic Wear"
+      },
+      {
+        "id": "86cc8d6b-9adf-45c9-8c37-900dadb4ae1e",
+        "name": "Satin Slip Dress (Rose Gold Edition)",
+        "description": "Fluid cowl neck satin midi slip dress in luxury emerald green, featuring delicate spaghetti straps. Finished in our signature luxury rose-gold details.",
+        "price": 4190,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-SATINSLIPD-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "c4bb8471-66df-4184-9792-df09bd70262a",
+        "name": "Linen Wrap Sun Dress (Rose Gold Edition)",
+        "description": "Breathable pure organic linen wrap dress featuring a tie belt waist and vintage flared skirt. Finished in our signature luxury rose-gold details.",
+        "price": 2624,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1544441893-675973e31985?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-LINENWRAPS-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "985c49d3-3356-468d-9d83-f4e811e3d09d",
+        "name": "Tweed Double Blazer (Rose Gold Edition)",
+        "description": "Textured tweed blazer jacket with structured padded shoulders and polished gold-crest buttons. Finished in our signature luxury rose-gold details.",
+        "price": 7340,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-TWEEDDOUBL-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "0f5d12b0-b2b3-4c68-aa00-31e60df842df",
+        "name": "Silk Georgette Blouse (Rose Gold Edition)",
+        "description": "Elegant semi-sheer high-neck silk blouse featuring ruffled neck detail and mother-of-pearl buttons. Finished in our signature luxury rose-gold details.",
+        "price": 3770,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-SILKGEORGE-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "34bffafd-440a-46e7-ab88-e3b7ce2c18c5",
+        "name": "Pleated Satin Skirt (Rose Gold Edition)",
+        "description": "High-waist champagne gold accordion-pleated midi skirt with a comfortable elasticated waistband. Finished in our signature luxury rose-gold details.",
+        "price": 3149,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1582142306909-195724d33ab9?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-PLEATEDSAT-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "d3838e74-19da-43cc-9e5c-e35dc04d8c89",
+        "name": "Sateen Wide Leg Trousers (Rose Gold Edition)",
+        "description": "Sleek flowing sateen wide-leg trousers in classic cream white, with front pockets and zip fly. Finished in our signature luxury rose-gold details.",
+        "price": 3454,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-SATEENWIDE-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "508ca365-541c-4f15-9467-9ce0da198fa6",
+        "name": "Lace Trim Cami Top (Rose Gold Edition)",
+        "description": "Premium silk cami top detailed with delicate black eyelash lace trimming on the neckline. Finished in our signature luxury rose-gold details.",
+        "price": 2090,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-LACETRIMCA-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "93127336-a564-4eb1-a02d-4fcf97b3e095",
+        "name": "Ribbed Knit Bodycon Dress (Rose Gold Edition)",
+        "description": "Sophisticated long sleeve ribbed knit midi dress contouring the body, styled with a high collar. Finished in our signature luxury rose-gold details.",
+        "price": 4820,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "WE-RIBBEDKNIT-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "ca913e3e-223c-4987-96f5-66c04207d7c1",
+        "name": "Floral Chiffon Wrap Dress (Rose Gold Edition)",
+        "description": "Flowing floral printed chiffon midi wrap dress styled with sheer balloon sleeves and ruffle hem. Finished in our signature luxury rose-gold details.",
+        "price": 3674,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "WE-FLORALCHIF-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "9dc1f13e-a47a-4ace-b76c-6448257b7993",
+        "name": "Classic Trench Coat (Rose Gold Edition)",
+        "description": "Double-breasted water-resistant beige trench coat with storm flaps and a detachable waist belt. Finished in our signature luxury rose-gold details.",
+        "price": 9440,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "WE-CLASSICTRE-RG",
+        "category": "Western Wear"
+      },
+      {
+        "id": "3786c360-b0b0-4eb9-907c-081239f6b17d",
+        "name": "Leather Satchel Bag (Rose Gold Edition)",
+        "description": "Structured top-handle genuine leather satchel bag with luxury polished gold-tone locking hardware. Finished in our signature luxury rose-gold details.",
+        "price": 13125,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "HA-LEATHERSAT-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "9f6cf436-0316-418e-99e3-a56d2c0e806e",
+        "name": "Suede Crossbody Bag (Rose Gold Edition)",
+        "description": "Minimalist premium soft suede sling crossbody bag detailed with an adjustable leather shoulder strap. Finished in our signature luxury rose-gold details.",
+        "price": 9449,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc15aae9?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "HA-SUEDECROSS-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "132858a2-2de6-4d12-8008-29ef463249f3",
+        "name": "Silk Brocade Box Clutch (Rose Gold Edition)",
+        "description": "Elegant traditional box clutch wrapped in heritage Banarasi silk brocade, finished with a metallic clasp. Finished in our signature luxury rose-gold details.",
+        "price": 6825,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "HA-SILKBROCAD-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "9a37a7f8-8dba-4884-b0c4-13a6bb5a88df",
+        "name": "Quilted Chain Tote Bag (Rose Gold Edition)",
+        "description": "Quilted luxury faux leather shoulder bag styled with interlocked gold chain-link straps and double pocket. Finished in our signature luxury rose-gold details.",
+        "price": 5240,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "HA-QUILTEDCHA-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "404a1c00-054f-4fe5-b98d-5d9f5a0503f1",
+        "name": "Canvas Utility Tote (Rose Gold Edition)",
+        "description": "Spacious woven structured canvas tote bag with contrast leather handles and magnetic button closure. Finished in our signature luxury rose-gold details.",
+        "price": 3454,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "HA-CANVASUTIL-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "9dd608c9-a2cc-413d-95a4-8500acb5fcf5",
+        "name": "Luxury Envelope Clutch (Rose Gold Edition)",
+        "description": "Sleek envelope foldover clutch in pebble-grained calfskin leather, features card slots and chain strap. Finished in our signature luxury rose-gold details.",
+        "price": 8295,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1598532187856-3c09e3905cfc?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "HA-LUXURYENVE-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "9fe80e20-fb68-4878-8c9c-272ad0d67b00",
+        "name": "Saddle Crossbody Bag (Rose Gold Edition)",
+        "description": "Heritage saddle bag in rich cognac leather, featuring brass buckles and front slip pockets. Finished in our signature luxury rose-gold details.",
+        "price": 11025,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "HA-SADDLECROS-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "20bdb44b-dc70-42a9-a9f2-4ab86d2abbcb",
+        "name": "Woven Straw Beach Bag (Rose Gold Edition)",
+        "description": "Bohemian summer straw shoulder bag woven with geometric panels, perfect for summer outings. Finished in our signature luxury rose-gold details.",
+        "price": 2099,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1576053139778-7e32f2ae3cf4?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "HA-WOVENSTRAW-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "d9b38ca9-0aa5-4db1-b622-61c713a27e37",
+        "name": "Designer Bucket Bag (Rose Gold Edition)",
+        "description": "Mini drawstring leather bucket bag with top carry handle and gold hardware eyelets. Finished in our signature luxury rose-gold details.",
+        "price": 4190,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611085583191-a3b1a8a89b70?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "HA-DESIGNERBU-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "39df8109-d44c-4bf7-8c06-862904eea320",
+        "name": "Metallic Evening Pouch (Rose Gold Edition)",
+        "description": "Glittering rose gold metallic woven mesh pouch with drawcord lock, perfect for weddings. Finished in our signature luxury rose-gold details.",
+        "price": 3140,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc15aae9?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "HA-METALLICEV-RG",
+        "category": "Handbags"
+      },
+      {
+        "id": "7a9dac4a-9857-46f2-9977-d42611c36e00",
+        "name": "Zardozi Leather Juttis (Rose Gold Edition)",
+        "description": "Handcrafted leather juttis detailed with traditional gold zardozi leaf embroidery and pearls. Finished in our signature luxury rose-gold details.",
+        "price": 3360,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fizzy Goblet",
+        "sku": "FO-ZARDOZILEA-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "f36853ef-31d4-4e5e-b257-c8ef93ad25a0",
+        "name": "Ankle Strap Leather Heels (Rose Gold Edition)",
+        "description": "Classic pointed toe high-heeled pumps detailed with adjustable cross-ankle straps in nude patent leather. Finished in our signature luxury rose-gold details.",
+        "price": 9449,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+        "brand": "Steve Madden",
+        "sku": "FO-ANKLESTRAP-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "e504e8fa-799b-4caf-bf3c-17352b5cd5b0",
+        "name": "Satin Mule Flats (Rose Gold Edition)",
+        "description": "Sophisticated pointed-toe flat slide mules featuring a crystal-embellished decorative front buckle. Finished in our signature luxury rose-gold details.",
+        "price": 4820,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-SATINMULEF-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "7e2e1428-871b-4d07-8935-00d031ca2738",
+        "name": "Strappy Suede Sandals (Rose Gold Edition)",
+        "description": "Lace-up block-heeled sandals crafted in soft black suede leather with tassels. Finished in our signature luxury rose-gold details.",
+        "price": 7349,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+        "brand": "Steve Madden",
+        "sku": "FO-STRAPPYSUE-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "2ed669bb-eece-45a1-9b06-89f8616278dc",
+        "name": "Embellished Wedding Heels (Rose Gold Edition)",
+        "description": "Elegant bridal kitten heels wrapped in champagne satin and hand-beaded with premium glass beads. Finished in our signature luxury rose-gold details.",
+        "price": 12075,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Signature",
+        "sku": "FO-EMBELLISHE-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "c89fd05d-d5df-43bc-8dfa-f8df73232c86",
+        "name": "Braided Leather Slides (Rose Gold Edition)",
+        "description": "Comfortable chic slides with a padded footbed and woven strap detail in tan leather. Finished in our signature luxury rose-gold details.",
+        "price": 3454,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-BRAIDEDLEA-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "4e740c56-5470-4a01-ae33-3fa88eb7be8d",
+        "name": "Gilded Kohlapuri Wedges (Rose Gold Edition)",
+        "description": "Traditional Kohlapuri sandal styled with a modern comfortable cork wedge heel and gold straps. Finished in our signature luxury rose-gold details.",
+        "price": 3990,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fizzy Goblet",
+        "sku": "FO-GILDEDKOHL-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "47c63d52-9f8d-4471-8729-92ea40536939",
+        "name": "Velvet Embroidered Loafers (Rose Gold Edition)",
+        "description": "Chic smoking slippers in black velvet, embroidered with customized gold monogram details. Finished in our signature luxury rose-gold details.",
+        "price": 5764,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=60",
+        "brand": "Charles & Keith",
+        "sku": "FO-VELVETEMBR-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "0a679dbc-6332-4d36-8bba-5d01ba77de60",
+        "name": "Metallic Strappy Flats (Rose Gold Edition)",
+        "description": "Minimalist slip-on flat sandals featuring slim intersecting gold straps and square toe. Finished in our signature luxury rose-gold details.",
+        "price": 1574,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=500&auto=format&fit=crop&q=60",
+        "brand": "H&M",
+        "sku": "FO-METALLICST-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "1709cfdf-a290-4091-851d-c85594fc6fde",
+        "name": "Leather Chelsea Boots (Rose Gold Edition)",
+        "description": "Classic black leather Chelsea boots featuring elasticated panels and low block heel. Finished in our signature luxury rose-gold details.",
+        "price": 8390,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "FO-LEATHERCHE-RG",
+        "category": "Footwear"
+      },
+      {
+        "id": "fbb72902-abb8-45bd-a175-011df8defb02",
+        "name": "Polki Kundan Necklace Set (Rose Gold Edition)",
+        "description": "Stunning heritage Choker necklace set in gold-plating, inlaid with uncut glass Polki and hanging green emerald beads. Finished in our signature luxury rose-gold details.",
+        "price": 36750,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-POLKIKUNDA-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "261deb32-7e9f-4cf1-92cf-1b386698c4c0",
+        "name": "Pave Crystal Hoop Earrings (Rose Gold Edition)",
+        "description": "Sparkling pave-set crystal hoop earrings cast in a modern high-polish rose gold plating. Finished in our signature luxury rose-gold details.",
+        "price": 7340,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Swarovski",
+        "sku": "JE-PAVECRYSTA-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "eecb5cb7-5308-4f76-803b-3e72d1b415cb",
+        "name": "Oversized Acetate Sunglasses (Rose Gold Edition)",
+        "description": "Statement designer square-frame black sunglasses with premium scratch-resistant UV400 lenses. Finished in our signature luxury rose-gold details.",
+        "price": 19425,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60",
+        "brand": "Prada",
+        "sku": "JE-OVERSIZEDA-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "17262981-0892-4e13-9fc7-eac52a41e34f",
+        "name": "Pearl Drop Earrings (Rose Gold Edition)",
+        "description": "Classic freshwater baroque pearl drops suspended from elegant sterling silver gold-plated studs. Finished in our signature luxury rose-gold details.",
+        "price": 4725,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-PEARLDROPE-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "c121a769-2c52-4d0d-a8ac-3984b31796b7",
+        "name": "Silk Hair Scarf Set (Rose Gold Edition)",
+        "description": "Three pack of organic mulberry silk square neck scarves printed in vintage chic patterns. Finished in our signature luxury rose-gold details.",
+        "price": 1670,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Mango",
+        "sku": "JE-SILKHAIRSC-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "dfd91946-05be-40b2-b008-3fb4f470f404",
+        "name": "Filigree Cuff Bangle (Rose Gold Edition)",
+        "description": "Handcrafted adjustable brass cuff bangle detailed with traditional Indian filigree design. Finished in our signature luxury rose-gold details.",
+        "price": 9345,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&auto=format&fit=crop&q=60",
+        "brand": "Anita Dongre",
+        "sku": "JE-FILIGREECU-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "4da40ce3-d0c7-494a-bfeb-72ba5686c5f4",
+        "name": "Classic Rose Gold Watch (Rose Gold Edition)",
+        "description": "Chic women's timepiece featuring a minimal rose gold dial case and premium mesh strap. Finished in our signature luxury rose-gold details.",
+        "price": 13124,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop&q=60",
+        "brand": "Fossil",
+        "sku": "JE-CLASSICROS-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "0e7736ec-6d4e-4d61-b38e-8c2a6b52307d",
+        "name": "Emerald Ring 18k Gold (Rose Gold Edition)",
+        "description": "Dainty 18k solid yellow gold ring set with a faceted natural oval-cut green emerald gemstone. Finished in our signature luxury rose-gold details.",
+        "price": 30345,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop&q=60",
+        "brand": "Riya's Fine Jewelry",
+        "sku": "JE-EMERALDRIN-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "a0f7b615-bb54-42e6-bc39-df4f8427839c",
+        "name": "Wool Felt Fedora Hat (Rose Gold Edition)",
+        "description": "Classic autumn fedora hat styled with a structured wide brim and contrast grosgrain band. Finished in our signature luxury rose-gold details.",
+        "price": 3140,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1533827432537-70133748f5c8?w=500&auto=format&fit=crop&q=60",
+        "brand": "Zara",
+        "sku": "JE-WOOLFELTFE-RG",
+        "category": "Jewelry & Accessories"
+      },
+      {
+        "id": "e9e7ce58-ff90-452d-81b0-0780677ae4c1",
+        "name": "Delicate Coin Anklet (Rose Gold Edition)",
+        "description": "Minimalist rose gold double chain anklet detailed with tiny polished geometric metal coin drops. Finished in our signature luxury rose-gold details.",
+        "price": 4190,
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "colors": [
+          "As shown"
+        ],
+        "inStock": true,
+        "imageUrl": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60",
+        "brand": "Swarovski",
+        "sku": "JE-DELICATECO-RG",
+        "category": "Jewelry & Accessories"
+      }
+    ],
+    "shipping": {
+      "freeAbove": 599,
+      "standardCharge": 79,
+      "estimatedDays": "3-5 days",
+      "codAvailable": true,
+      "codCharge": 49
+    },
+    "faqs": [],
+    "greeting": "Namaste! Welcome to Riya's Boutique. How can we help you today?",
+    "escalationTriggers": [
+      "angry",
+      "human"
+    ],
+    "escalationMessage": "We are connecting you to a senior support agent shortly.",
+    "model": "meta-llama/llama-3.3-70b-instruct:free",
+    "modelName": "Meta: Llama 3.3 70B Instruct (free)",
+    "orders": "?",
+    "notes": "",
+    "status": "warm"
+  }
+}
