@@ -1,29 +1,23 @@
 // src/services/whatsappService.js
 // ============================================================
-// WHATSAPP CLOUD API SERVICE
-// Handles all communication with Meta's WhatsApp Cloud API:
-// - Sending text messages
-// - Sending interactive buttons
-// - Marking messages as read
-// - Parsing incoming webhook payloads
+// INSTAGRAM MESSAGING API SERVICE
+// Handles all communication with Meta's Instagram Messaging API
+// Note: File kept as whatsappService.js to avoid import changes
 // ============================================================
 
 const axios = require('axios');
 
-const WA_API_URL = 'https://graph.facebook.com/v19.0';
-const TOKEN = process.env.WHATSAPP_TOKEN;
+const IG_API_URL = 'https://graph.facebook.com/v19.0';
+const TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.WHATSAPP_TOKEN;
 
 // ---- SEND TEXT MESSAGE ----
 async function sendTextMessage(phoneNumberId, to, text) {
   try {
     const response = await axios.post(
-      `${WA_API_URL}/${phoneNumberId}/messages`,
+      `${IG_API_URL}/me/messages`,
       {
-        messaging_product: 'whatsapp',
-        recipient_type: 'individual',
-        to: to,
-        type: 'text',
-        text: { body: text, preview_url: false }
+        recipient: { id: to },
+        message: { text: text }
       },
       {
         headers: {
@@ -32,33 +26,34 @@ async function sendTextMessage(phoneNumberId, to, text) {
         }
       }
     );
-    console.log(`✅ Message sent to ${to} | Message ID: ${response.data.messages[0].id}`);
+    console.log(`✅ Message sent to IG ${to} | Message ID: ${response.data.message_id}`);
     return response.data;
   } catch (error) {
-    console.error('❌ WhatsApp send error:', error.response?.data || error.message);
+    console.error('❌ Instagram send error:', error.response?.data || error.message);
     throw error;
   }
 }
 
-// ---- SEND INTERACTIVE BUTTONS (for menus) ----
+// ---- SEND INTERACTIVE BUTTONS ----
 async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
-  // buttons = [{ id: 'btn_1', title: 'Track Order' }, ...]
+  // IG supports generic templates for buttons
   try {
     const response = await axios.post(
-      `${WA_API_URL}/${phoneNumberId}/messages`,
+      `${IG_API_URL}/me/messages`,
       {
-        messaging_product: 'whatsapp',
-        recipient_type: 'individual',
-        to: to,
-        type: 'interactive',
-        interactive: {
-          type: 'button',
-          body: { text: bodyText },
-          action: {
-            buttons: buttons.map(b => ({
-              type: 'reply',
-              reply: { id: b.id, title: b.title }
-            }))
+        recipient: { id: to },
+        message: {
+          attachment: {
+            type: "template",
+            payload: {
+              template_type: "button",
+              text: bodyText,
+              buttons: buttons.map(b => ({
+                type: "postback",
+                title: b.title,
+                payload: b.id
+              }))
+            }
           }
         }
       },
@@ -69,10 +64,9 @@ async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
         }
       }
     );
-    console.log(`✅ Button message sent to ${to}`);
+    console.log(`✅ Button message sent to IG ${to}`);
     return response.data;
   } catch (error) {
-    // Fallback to text if buttons fail
     console.error('Button send failed, falling back to text:', error.message);
     return sendTextMessage(phoneNumberId, to, bodyText);
   }
@@ -82,11 +76,10 @@ async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
 async function markAsRead(phoneNumberId, messageId) {
   try {
     await axios.post(
-      `${WA_API_URL}/${phoneNumberId}/messages`,
+      `${IG_API_URL}/me/messages`,
       {
-        messaging_product: 'whatsapp',
-        status: 'read',
-        message_id: messageId,
+        recipient: { id: phoneNumberId }, // For IG we pass sender_action
+        sender_action: "mark_seen"
       },
       {
         headers: {
@@ -96,49 +89,47 @@ async function markAsRead(phoneNumberId, messageId) {
       }
     );
   } catch (error) {
-    // Non-critical, just log
     console.error('Mark as read failed:', error.message);
   }
 }
 
 // ---- PARSE INCOMING WEBHOOK ----
-// Extracts the useful data from Meta's complex webhook payload
 function parseIncomingMessage(webhookBody) {
   try {
     const entry = webhookBody.entry?.[0];
-    const changes = entry?.changes?.[0];
-    const value = changes?.value;
+    const messaging = entry?.messaging?.[0];
 
-    if (!value?.messages) return null;
+    if (!messaging) return null;
 
-    const message = value.messages[0];
-    const contact = value.contacts?.[0];
+    const senderId = messaging.sender?.id;
+    const recipientId = messaging.recipient?.id;
+    const message = messaging.message;
+    const postback = messaging.postback;
 
-    // Handle different message types
     let text = '';
-    if (message.type === 'text') {
-      text = message.text.body;
-    } else if (message.type === 'interactive') {
-      // Button click or list selection
-      text = message.interactive?.button_reply?.title ||
-             message.interactive?.list_reply?.title ||
-             '';
-    } else if (message.type === 'image' || message.type === 'document') {
-      text = '[Customer sent an image/file]';
-    } else if (message.type === 'audio') {
-      text = '[Customer sent a voice note]';
+    let messageId = '';
+    let type = 'text';
+
+    if (message) {
+      text = message.text || '[Attachment]';
+      messageId = message.mid;
+      if (message.attachments) type = 'image';
+    } else if (postback) {
+      text = postback.payload || postback.title;
+      messageId = postback.mid || String(Date.now());
+      type = 'interactive';
     } else {
-      text = '[Unsupported message type]';
+      return null;
     }
 
     return {
-      messageId: message.id,
-      phoneNumberId: value.metadata.phone_number_id,
-      customerPhone: message.from,           // e.g. "919876543210"
-      customerName: contact?.profile?.name || 'Customer',
+      messageId: messageId,
+      phoneNumberId: recipientId,
+      customerPhone: senderId, // This is IG PSID
+      customerName: 'Instagram User',
       text: text,
-      timestamp: new Date(parseInt(message.timestamp) * 1000),
-      messageType: message.type,
+      timestamp: new Date(parseInt(messaging.timestamp)),
+      messageType: type,
     };
   } catch (error) {
     console.error('Webhook parse error:', error.message);
@@ -147,27 +138,43 @@ function parseIncomingMessage(webhookBody) {
 }
 
 // ---- SEND TYPING INDICATOR ----
-// Shows "typing..." to customer while AI generates response
 async function sendTypingIndicator(phoneNumberId, to) {
-  // WhatsApp Cloud API doesn't have a native typing indicator endpoint yet
-  // This is a placeholder for when it's added
-  // For now, the "read" receipt serves a similar purpose
-  console.log(`Showing typing indicator for ${to}`);
+  try {
+    await axios.post(
+      `${IG_API_URL}/me/messages`,
+      {
+        recipient: { id: to },
+        sender_action: "typing_on"
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${TOKEN}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+  } catch (error) {
+    // Ignore errors for typing indicators
+  }
 }
 
 // ---- SEND IMAGE MESSAGE ----
 async function sendImageMessage(phoneNumberId, to, imageUrl, captionText = '') {
   try {
+    // For caption + image, we first send the image, then text (or use a generic template)
+    // Here we send image as attachment
     const response = await axios.post(
-      `${WA_API_URL}/${phoneNumberId}/messages`,
+      `${IG_API_URL}/me/messages`,
       {
-        messaging_product: 'whatsapp',
-        recipient_type: 'individual',
-        to: to,
-        type: 'image',
-        image: {
-          link: imageUrl,
-          caption: captionText || undefined
+        recipient: { id: to },
+        message: {
+          attachment: {
+            type: "image",
+            payload: {
+              url: imageUrl,
+              is_reusable: true
+            }
+          }
         }
       },
       {
@@ -177,10 +184,14 @@ async function sendImageMessage(phoneNumberId, to, imageUrl, captionText = '') {
         }
       }
     );
-    console.log(`✅ Image sent to ${to} | Message ID: ${response.data.messages[0].id}`);
+    
+    if (captionText) {
+      await sendTextMessage(phoneNumberId, to, captionText);
+    }
+    
     return response.data;
   } catch (error) {
-    console.error('❌ WhatsApp image send error:', error.response?.data || error.message);
+    console.error('❌ Instagram image send error:', error.response?.data || error.message);
     throw error;
   }
 }

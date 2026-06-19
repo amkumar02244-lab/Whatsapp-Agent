@@ -42,8 +42,8 @@ router.post('/', async (req, res) => {
     const body = req.body;
 
     // Ignore non-message events (delivery receipts, etc.)
-    if (body.object !== 'whatsapp_business_account') return;
-    if (!body.entry?.[0]?.changes?.[0]?.value?.messages) return;
+    if (body.object !== 'instagram') return;
+    if (!body.entry?.[0]?.changes?.[0]?.value?.messages && !body.entry?.[0]?.messaging) return;
 
     // Parse the incoming message
     const parsedMessage = parseIncomingMessage(body);
