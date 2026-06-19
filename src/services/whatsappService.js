@@ -14,7 +14,7 @@ const TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.WHATSAPP_TOKEN;
 async function sendTextMessage(phoneNumberId, to, text) {
   try {
     const response = await axios.post(
-      `${IG_API_URL}/me/messages`,
+      `${IG_API_URL}/${phoneNumberId}/messages`,
       {
         recipient: { id: to },
         message: { text: text }
@@ -39,7 +39,7 @@ async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
   // IG supports generic templates for buttons
   try {
     const response = await axios.post(
-      `${IG_API_URL}/me/messages`,
+      `${IG_API_URL}/${phoneNumberId}/messages`,
       {
         recipient: { id: to },
         message: {
@@ -76,7 +76,7 @@ async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
 async function markAsRead(phoneNumberId, messageId) {
   try {
     await axios.post(
-      `${IG_API_URL}/me/messages`,
+      `${IG_API_URL}/${phoneNumberId}/messages`,
       {
         recipient: { id: phoneNumberId }, // For IG we pass sender_action
         sender_action: "mark_seen"
@@ -141,7 +141,7 @@ function parseIncomingMessage(webhookBody) {
 async function sendTypingIndicator(phoneNumberId, to) {
   try {
     await axios.post(
-      `${IG_API_URL}/me/messages`,
+      `${IG_API_URL}/${phoneNumberId}/messages`,
       {
         recipient: { id: to },
         sender_action: "typing_on"
@@ -164,7 +164,7 @@ async function sendImageMessage(phoneNumberId, to, imageUrl, captionText = '') {
     // For caption + image, we first send the image, then text (or use a generic template)
     // Here we send image as attachment
     const response = await axios.post(
-      `${IG_API_URL}/me/messages`,
+      `${IG_API_URL}/${phoneNumberId}/messages`,
       {
         recipient: { id: to },
         message: {
