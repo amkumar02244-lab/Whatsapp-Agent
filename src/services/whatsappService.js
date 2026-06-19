@@ -6,7 +6,7 @@
 
 const axios = require('axios');
 
-const TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.WHATSAPP_TOKEN;
+const TOKEN = (process.env.INSTAGRAM_ACCESS_TOKEN || process.env.WHATSAPP_TOKEN || '').trim();
 
 // Meta recently split the API. IGQ tokens use graph.instagram.com, EA tokens use graph.facebook.com
 const isIGToken = TOKEN && TOKEN.startsWith('IGQ');
