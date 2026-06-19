@@ -38,6 +38,9 @@ router.post('/', async (req, res) => {
   // Respond immediately — Meta will retry if we don't
   res.sendStatus(200);
 
+  console.log('\n📥 INCOMING WEBHOOK PAYLOAD:');
+  console.log(JSON.stringify(req.body, null, 2));
+
   try {
     const body = req.body;
 
