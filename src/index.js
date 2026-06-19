@@ -44,6 +44,20 @@ const limiter = rateLimit({
 });
 app.use('/webhook', limiter);
 
+// ---- PRIVACY POLICY (For Meta Verification) ----
+app.get('/privacy', (req, res) => {
+  res.send(`
+    <html>
+      <head><title>Privacy Policy</title></head>
+      <body>
+        <h1>Privacy Policy for Riya's Boutique Test</h1>
+        <p>This is a test application. We do not store, share, or sell any personal data.</p>
+        <p>If you have questions, please contact the administrator.</p>
+      </body>
+    </html>
+  `);
+});
+
 // ---- ROUTES ----
 app.use('/webhook',   webhookRouter);
 app.use('/api/dashboard', dashboardRouter);
