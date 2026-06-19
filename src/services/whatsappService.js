@@ -8,21 +8,13 @@ const axios = require('axios');
 
 const TOKEN = (process.env.INSTAGRAM_ACCESS_TOKEN || process.env.WHATSAPP_TOKEN || '').trim();
 
-// Meta recently split the API. IGQ tokens use graph.instagram.com, EA tokens use graph.facebook.com
-const isIGToken = TOKEN && TOKEN.startsWith('IGQ');
-const IG_API_URL = isIGToken ? 'https://graph.instagram.com/v20.0' : 'https://graph.facebook.com/v20.0';
-
-// For IGQ tokens we must use the IG User ID. For EA tokens we use /me
-function getEndpoint(phoneNumberId) {
-  if (isIGToken) return `${IG_API_URL}/${phoneNumberId}/messages`;
-  return `${IG_API_URL}/me/messages`;
-}
+const IG_API_URL = 'https://graph.facebook.com/v20.0';
 
 // ---- SEND TEXT MESSAGE ----
 async function sendTextMessage(phoneNumberId, to, text) {
   try {
     const response = await axios.post(
-      getEndpoint(phoneNumberId),
+      `${IG_API_URL}/me/messages?access_token=${TOKEN}`,
       {
         recipient: { id: to },
         message: { text: text }
@@ -46,7 +38,7 @@ async function sendTextMessage(phoneNumberId, to, text) {
 async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
   try {
     const response = await axios.post(
-      getEndpoint(phoneNumberId),
+      `${IG_API_URL}/me/messages?access_token=${TOKEN}`,
       {
         recipient: { id: to },
         message: {
@@ -83,7 +75,7 @@ async function sendButtonMessage(phoneNumberId, to, bodyText, buttons) {
 async function markAsRead(phoneNumberId, messageId) {
   try {
     await axios.post(
-      getEndpoint(phoneNumberId),
+      `${IG_API_URL}/me/messages?access_token=${TOKEN}`,
       {
         recipient: { id: phoneNumberId },
         sender_action: "mark_seen"
@@ -148,7 +140,7 @@ function parseIncomingMessage(webhookBody) {
 async function sendTypingIndicator(phoneNumberId, to) {
   try {
     await axios.post(
-      getEndpoint(phoneNumberId),
+      `${IG_API_URL}/me/messages?access_token=${TOKEN}`,
       {
         recipient: { id: to },
         sender_action: "typing_on"
@@ -169,7 +161,7 @@ async function sendTypingIndicator(phoneNumberId, to) {
 async function sendImageMessage(phoneNumberId, to, imageUrl, captionText = '') {
   try {
     const response = await axios.post(
-      getEndpoint(phoneNumberId),
+      `${IG_API_URL}/me/messages?access_token=${TOKEN}`,
       {
         recipient: { id: to },
         message: {
