@@ -67,7 +67,7 @@ function buildSystemPrompt(brand, liveProducts = []) {
   let productsList = "Currently out of stock or catalog unavailable.";
   if (liveProducts && liveProducts.length > 0) {
     productsList = liveProducts.map(p => 
-      `- [ID: ${p.id}] ${p.name}: ₹${p.price} | Category: ${p.category} | ${p.is_active == 'True' ? '✅ In Stock' : '❌ Out of Stock'} | Description: ${p.description || 'N/A'} | Image URL: ${p.image_url || 'No image'}`
+      `- [ID: ${p.id}] ${p.name}: ₹${p.price} | Category: ${p.category} | ${p.is_active ? '✅ In Stock' : '❌ Out of Stock'} | Description: ${p.description || 'N/A'} | Image URL: ${p.image_url || 'No image'}`
     ).join('\n');
   } else if (brand.products) {
     // Fallback to local products
