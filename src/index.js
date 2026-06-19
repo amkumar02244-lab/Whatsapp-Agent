@@ -18,6 +18,9 @@ const apiRouter       = require('./routes/api');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
+// Trust the first proxy (Railway)
+app.set('trust proxy', 1);
+
 // ---- MIDDLEWARE ----
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
