@@ -9,14 +9,32 @@
 const { generateResponse, detectIntent } = require('./claudeService');
 const { sendTextMessage, sendButtonMessage, markAsRead, sendImageMessage } = require('./whatsappService');
 const { getBrandByPhoneId } = require('../config/brands');
-const { getOrderStatus } = require('../config/demoOrders');
 const NodeCache = require('node-cache');
+const axios = require('axios');
+
+const BACKEND_URL = process.env.BACKEND_API_URL || 'https://ecommerce-backend-production-1910.up.railway.app';
 
 // Rate limiter — max 5 messages per customer per minute
 const rateLimitCache = new NodeCache({ stdTTL: 60 });
 
 // Escalation tracker — brands that need human follow-up
 const escalationQueue = [];
+
+async function fetchOrderStatus(orderId) {
+  try {
+    const response = await axios.get(`${BACKEND_URL}/admin/orders/${orderId}`);
+    const order = response.data;
+    return {
+      message: `📦 Order *#${order.id}*\n💰 Total: ₹${order.total_amount}\n📌 Status: *${order.status.toUpperCase()}*`
+    };
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null; // Not found
+    }
+    console.error('Failed to fetch order status:', error.message);
+    return null;
+  }
+}
 
 // ---- MAIN HANDLER ----
 async function handleIncomingMessage(parsedMessage) {
@@ -63,7 +81,7 @@ async function handleIncomingMessage(parsedMessage) {
   // 6. Order tracking — try to get real order data first
   let orderContext = null;
   if (intent.intent === 'order_tracking' || intent.intent === 'order_tracking_no_id') {
-    const orderData = getOrderStatus(intent.orderNumber, customerPhone);
+    const orderData = await fetchOrderStatus(intent.orderNumber);
     if (orderData) {
       // We found the order — send direct status message
       await sendTextMessage(phoneNumberId, customerPhone, orderData.message);
@@ -113,21 +131,22 @@ async function handleIncomingMessage(parsedMessage) {
   if (orderMatch) {
     try {
       const orderParams = JSON.parse(orderMatch[1]);
-      const { placeNewOrder } = require('../config/demoOrders');
-      const newOrder = placeNewOrder({
-        ...orderParams,
-        customerPhone: orderParams.customerPhone || customerPhone,
-        customerName: orderParams.customerName || customerName || 'Customer'
+      const response = await axios.post(`${BACKEND_URL}/admin/orders/direct-create`, {
+        customer_name: orderParams.customerName || customerName || 'Customer',
+        customer_phone: orderParams.customerPhone || customerPhone,
+        product_id: orderParams.product_id,
+        quantity: orderParams.quantity || 1,
+        address: orderParams.address
       });
+      const newOrder = response.data;
       if (newOrder) {
         replyText = replyText.replace(orderRegex, '').trim() + 
           `\n\n🎉 *Order Confirmed!*\n` +
-          `📦 Order ID: *#${newOrder.orderId}*\n` +
-          `💰 Total Amount: *₹${newOrder.amount}*\n` +
-          `🚚 Estimated Delivery: *${newOrder.estimatedDelivery}*`;
+          `📦 Order ID: *${newOrder.id}*\n` +
+          `💰 Total Amount: *₹${newOrder.total_amount}*`;
       }
     } catch (err) {
-      console.error('Failed to create order from AI tag:', err.message);
+      console.error('Failed to create order via API:', err.message);
       replyText = replyText.replace(orderRegex, '').trim();
     }
   }
@@ -239,7 +258,7 @@ async function handleWebChatMessage(brandId, customerPhone, customerName, text, 
   // 6. Order tracking - mock/live db lookup
   let orderContext = null;
   if (intent.intent === 'order_tracking' || intent.intent === 'order_tracking_no_id') {
-    const orderData = getOrderStatus(intent.orderNumber, customerPhone);
+    const orderData = await fetchOrderStatus(intent.orderNumber);
     if (orderData) {
       logInteraction({
         brand: brand.name,
@@ -297,21 +316,22 @@ async function handleWebChatMessage(brandId, customerPhone, customerName, text, 
   if (orderMatch) {
     try {
       const orderParams = JSON.parse(orderMatch[1]);
-      const { placeNewOrder } = require('../config/demoOrders');
-      const newOrder = placeNewOrder({
-        ...orderParams,
-        customerPhone: orderParams.customerPhone || customerPhone,
-        customerName: orderParams.customerName || customerName || 'Customer'
+      const response = await axios.post(`${BACKEND_URL}/admin/orders/direct-create`, {
+        customer_name: orderParams.customerName || customerName || 'Customer',
+        customer_phone: orderParams.customerPhone || customerPhone,
+        product_id: orderParams.product_id,
+        quantity: orderParams.quantity || 1,
+        address: orderParams.address
       });
+      const newOrder = response.data;
       if (newOrder) {
         replyText = replyText.replace(orderRegex, '').trim() + 
           `\n\n🎉 *Order Confirmed!*\n` +
-          `📦 Order ID: *#${newOrder.orderId}*\n` +
-          `💰 Total Amount: *₹${newOrder.amount}*\n` +
-          `🚚 Estimated Delivery: *${newOrder.estimatedDelivery}*`;
+          `📦 Order ID: *${newOrder.id}*\n` +
+          `💰 Total Amount: *₹${newOrder.total_amount}*`;
       }
     } catch (err) {
-      console.error('Failed to create order from AI tag:', err.message);
+      console.error('Failed to create order via API:', err.message);
       replyText = replyText.replace(orderRegex, '').trim();
     }
   }

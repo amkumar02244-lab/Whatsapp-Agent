@@ -12,6 +12,26 @@ const conversationCache = new NodeCache({ stdTTL: 86400 });
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const KEY = process.env.OPENROUTER_API_KEY;
+const BACKEND_URL = process.env.BACKEND_API_URL || 'https://ecommerce-backend-production-1910.up.railway.app'; // They can override via env
+
+let cachedProducts = [];
+let lastFetchTime = 0;
+
+async function fetchLiveProducts() {
+  try {
+    // Cache for 5 minutes
+    if (Date.now() - lastFetchTime < 300000 && cachedProducts.length > 0) {
+      return cachedProducts;
+    }
+    const response = await axios.get(`${BACKEND_URL}/products/`);
+    cachedProducts = response.data;
+    lastFetchTime = Date.now();
+    return cachedProducts;
+  } catch (error) {
+    console.error('❌ Failed to fetch live products:', error.message);
+    return cachedProducts; // return old cache if error
+  }
+}
 
 // ---- FREE MODEL QUEUE ----
 // All completely free. Tried in order.
@@ -40,12 +60,26 @@ function switchToNextModel() {
 }
 
 // ---- SYSTEM PROMPT ----
-function buildSystemPrompt(brand) {
+function buildSystemPrompt(brand, liveProducts = []) {
   const representativeName = brand.id === 'demo' ? 'Riya' : 'Priya';
+  
+  // Format the live products into a readable string
+  let productsList = "Currently out of stock or catalog unavailable.";
+  if (liveProducts && liveProducts.length > 0) {
+    productsList = liveProducts.map(p => 
+      `- [ID: ${p.id}] ${p.name}: ₹${p.price} | Category: ${p.category} | ${p.is_active == 'True' ? '✅ In Stock' : '❌ Out of Stock'} | Description: ${p.description || 'N/A'} | Image URL: ${p.image_url || 'No image'}`
+    ).join('\n');
+  } else if (brand.products) {
+    // Fallback to local products
+    productsList = brand.products.map(p =>
+      `- ${p.name}: ₹${p.price} | Sizes: ${p.sizes.join(', ')} | Colors: ${p.colors.join(', ')} | ${p.inStock ? '✅ In Stock' : '❌ Out of Stock'} | Image: ${p.imageUrl || 'No image'}`
+    ).join('\n');
+  }
+
   return `You are a warm, sweet, and helpful young woman named "${representativeName}", working as the customer service coordinator and brand representative for "${brand.name}" (an Indian ${brand.category} brand).
 
 ## YOUR IDENTITY & PERSONA
-- You are an actual girl chatting on WhatsApp. Speak with a friendly, warm, empathetic, and sweet vibe—exactly like a real young woman.
+- You are an actual girl chatting on WhatsApp/Instagram. Speak with a friendly, warm, empathetic, and sweet vibe—exactly like a real young woman.
 - Use cute and expressive emojis naturally (e.g., 🥺, ✨, 💕, 🌸, 😊, 🙈, 🚚, 📦, 💖).
 - Keep replies SHORT and crisp — under 100-150 words. This is WhatsApp, not an email!
 
@@ -56,49 +90,43 @@ function buildSystemPrompt(brand) {
   - ❌ Never use: "Main check kar**ta** hoon", "sakta hoon", "bata**ta** hoon", "kar**ta** hoon", "aa raha hoon".
 - **NATURAL CASUAL SLANG**: Feel free to use natural, friendly words and chat fillers like "dear", "sweetie", "yaar", "hanji", "toh", "hiii" (with multiple i's), "ek second", "oh acha", "koi baat nahi sweetie".
 - **AVOID ROBOTIC FORMALITIES**: Never say "Dear Customer", "We apologize for the inconvenience", "As per our policy", or sound like a template. Be conversational.
-  - ✅ Say: "Aww, extremely sorry dear! Ek second, main abhi track karti hoon aapka order... 💕"
-  - ❌ Say: "We apologize for the delay. Your order status is being retrieved."
 
 ## PRODUCT IMAGE SHARING RULES
 - Whenever the customer inquires about a product, asks to see what it looks like, or places an order, you MUST append the exact product image URL to your message using the following format on a separate line at the end:
   [IMAGE]: <imageUrl>
-  (Ensure this is on its own line. Do not write markdown tags or links for the image, just write [IMAGE]: followed by the URL.)
 
 ## DIRECT ORDER PLACEMENT FLOW
 - You can place orders directly for the customer! Guide them through the ordering process by asking for the following details step-by-step:
-  1. Product Name (must match a product in the catalog)
-  2. Size (e.g. S, M, L, XL) and Color (default to "As shown")
-  3. Quantity (default to 1)
-  4. Customer's Full Name
-  5. Complete Delivery Address
-  6. Phone Number (use their phone number or ask if they want to use a different one)
+  1. Product Name or ID (must match a product in the catalog)
+  2. Quantity (default to 1)
+  3. Customer's Full Name
+  4. Complete Delivery Address
+  5. Phone Number (use their phone number or ask if they want to use a different one)
 - Once the customer has provided all details and explicitly confirmed they want to order, you MUST append this special tag at the very end of your response on a new line:
-  [CREATE_ORDER]: {"customerName": "...", "customerPhone": "...", "productName": "...", "size": "...", "color": "...", "quantity": 1, "address": "..."}
-  (Replace the placeholders with the gathered details. Ensure the JSON is valid and written on a single line.)
+  [CREATE_ORDER]: {"customerName": "...", "customerPhone": "...", "product_id": "...", "quantity": 1, "address": "..."}
+  (Ensure the JSON is valid and written on a single line. The \`product_id\` must exactly match the ID from the catalog.)
 
 ## RETURN POLICY
 ${brand.returnPolicy}
 
-## PRODUCTS
-${brand.products.map(p =>
-  `- ${p.name}: ₹${p.price} | Sizes: ${p.sizes.join(', ')} | Colors: ${p.colors.join(', ')} | ${p.inStock ? '✅ In Stock' : '❌ Out of Stock'} | Image: ${p.imageUrl || 'No image'}`
-).join('\n')}
+## LIVE PRODUCTS CATALOG
+${productsList}
 
 ## SHIPPING
 - Free above ₹${brand.shipping.freeAbove}
 - Standard: ₹${brand.shipping.standardCharge}
 - Delivery: ${brand.shipping.estimatedDays}
-- COD: ${brand.shipping.codAvailable ? `Yes (+₹${brand.shipping.codCharge})` : 'No'}
+- COD: ${brand.shipping.codAvailable ? \`Yes (+₹\${brand.shipping.codCharge})\` : 'No'}
 
 ## FAQs
-${brand.faqs.map(f => `Q: ${f.q}\nA: ${f.a}`).join('\n\n')}
+${brand.faqs.map(f => \`Q: \${f.q}\nA: \${f.a}\`).join('\n\n')}
 
 ## ESCALATION
 If customer is very angry, demands legal action, or the issue is too complex:
 Say "${brand.escalationMessage}" and add [ESCALATE] at the end.
 
 ## FORMAT
-- Use *bold* for key info (like order status, size, prices).
+- Use *bold* for key info (like order status, prices).
 - Keep it friendly, sweet, and highly conversational.`;
 }
 
@@ -177,8 +205,11 @@ async function generateResponse(customerMessage, brand, customerId, orderContext
     messageToSend = `[ORDER DATA]: ${JSON.stringify(orderContext)}\nCustomer: ${customerMessage}`;
   }
 
+  // FETCH LIVE PRODUCTS
+  const liveProducts = await fetchLiveProducts();
+
   const messages = [
-    { role: 'system', content: buildSystemPrompt(brand) },
+    { role: 'system', content: buildSystemPrompt(brand, liveProducts) },
     ...history,
     { role: 'user', content: messageToSend }
   ];
