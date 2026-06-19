@@ -116,10 +116,10 @@ ${productsList}
 - Free above ₹${brand.shipping.freeAbove}
 - Standard: ₹${brand.shipping.standardCharge}
 - Delivery: ${brand.shipping.estimatedDays}
-- COD: ${brand.shipping.codAvailable ? \`Yes (+₹\${brand.shipping.codCharge})\` : 'No'}
+- COD: ${brand.shipping.codAvailable ? `Yes (+₹${brand.shipping.codCharge})` : 'No'}
 
 ## FAQs
-${brand.faqs.map(f => \`Q: \${f.q}\nA: \${f.a}\`).join('\n\n')}
+${brand.faqs.map(f => `Q: ${f.q}\nA: ${f.a}`).join('\n\n')}
 
 ## ESCALATION
 If customer is very angry, demands legal action, or the issue is too complex:
