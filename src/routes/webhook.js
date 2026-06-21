@@ -45,7 +45,8 @@ router.post('/', async (req, res) => {
     const body = req.body;
 
     // Ignore non-message events (delivery receipts, etc.)
-    if (body.object !== 'instagram') return;
+    // body.object is 'whatsapp' for WhatsApp Cloud API, 'instagram' for Instagram DMs
+    if (body.object !== 'whatsapp' && body.object !== 'instagram') return;
     if (!body.entry?.[0]?.changes?.[0]?.value?.messages && !body.entry?.[0]?.messaging) return;
 
     // Parse the incoming message
